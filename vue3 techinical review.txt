@@ -1,0 +1,25 @@
+Vue 3 technical review
+Vue 3, released in September 2020 and made the default in February 2022, represents a significant evolution of the Vue.js framework, bringing substantial improvements in performance, developer experience, and scalability. 
+Here's a breakdown of the key technical aspects of Vue 3:
+1. Performance enhancements
+Faster Virtual DOM: Vue 3 features a redesigned Virtual DOM implementation with a new diffing algorithm, resulting in faster mounting, patching, and rendering, particularly noticeable in large-scale applications.
+Smaller Bundle Size: Vue 3 is more tree-shaking friendly, allowing developers to include only the necessary parts of the library, leading to smaller bundle sizes and faster load times. The core runtime is now approximately 12kb (gzipped).
+Optimized Reactivity: The reactivity system has been rewritten using JavaScript's Proxy API, offering more efficient and flexible change tracking compared to Vue 2's Object.defineProperty-based system. 
+2. Composition API
+Logic Reuse and Organization: The Composition API introduces a new way to structure and organize component logic, allowing developers to group related logic together in a more modular and reusable manner, often referred to as "composables". This is a shift from the Options API where logic is separated by options like data, methods, etc.
+Improved Readability and Maintainability: By allowing for a more logical grouping of code and the extraction of reusable logic into composables, the Composition API can significantly improve code readability and make large codebases easier to maintain and scale.
+Better TypeScript Integration: The Composition API was designed with TypeScript in mind, providing better type inference, cleaner typings, and a more seamless experience for developers using TypeScript. 
+3. New features
+Teleport: Enables rendering a component's content in a different part of the DOM tree, independent of its parent hierarchy, useful for modals, tooltips, and other overlay elements.
+Fragments: Allows components to have multiple root nodes in their templates, eliminating the need for unnecessary wrapper div elements.
+Suspense (Experimental): Provides a way to gracefully handle asynchronous components and display a fallback while they are loading. 
+4. TypeScript support
+Vue 3 was rewritten in TypeScript, offering first-class support for static typing, leading to better code quality, improved IDE support, and easier debugging, according to Monterail. 
+5. Reactivity system
+Vue 3 utilizes JavaScript Proxies to implement reactivity, allowing for more efficient tracking of changes in data, including nested properties and dynamically added properties, addressing limitations found in Vue 2.
+The ref function is primarily used for primitive values, while reactive is ideal for objects and arrays. 
+6. Migration considerations
+Breaking Changes: While Vue 3 maintains a high level of compatibility with Vue 2, there are some breaking changes that require careful review and testing during migration.
+Library and Plugin Compatibility: Some third-party libraries and plugins may not yet be fully compatible with Vue 3, requiring developers to check their dependencies and potentially find alternatives or wait for updates.
+Shift in Thinking (Composition API): Adopting the Composition API requires a shift in how developers structure their components, which can be a learning curve for those accustomed to the Options API. 
+In conclusion, Vue 3 offers significant improvements over its predecessor, making it a powerful and versatile framework for building modern web applications. Its enhanced performance, improved developer experience, and better scalability, thanks to features like the Composition API and first-class TypeScript support, position it as a strong choice for both small and large-scale projects. While the migration process might involve some challenges, the long-term benefits of adopting Vue 3 outweigh the initial effort. 
