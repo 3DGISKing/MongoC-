@@ -1,0 +1,7 @@
+CompositeOperation = "destination-in" refers to a specific value of the globalCompositeOperation property in the HTML5 Canvas 2D API. This property dictates how new shapes or images (the "source") are drawn onto an existing canvas (the "destination").
+When globalCompositeOperation is set to "destination-in", the following occurs:
+Only the part of the existing content (destination) that overlaps with the new shape/image (source) remains visible.
+The new shape/image itself is used as a mask.
+Any part of the existing content that does not intersect with the new shape/image becomes transparent.
+The new shape/image itself is not drawn, only its shape is used to define the visible area of the destination.
+In essence, "destination-in" masks the existing canvas content using the shape of the new content being drawn, revealing only the overlapping areas of the destination.
